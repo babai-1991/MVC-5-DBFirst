@@ -1,0 +1,53 @@
+﻿@model List<ScratchPad.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Products</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ProductID
+            </th>
+            <th>
+                ProductName
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                DateOfPurchase
+            </th>
+            <th>
+                AvailabilityStatus
+            </th>
+            <th>
+                CategoryID
+            </th>
+            <th>
+                BrandID
+            </th>
+            <th>
+                Active
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductID</td>
+                <td>@product.ProductName</td>
+                <td>@product.Price.Value.ToString("C")</td>
+                <td>@product.DateOfPurchase.Value.ToString("D")</td>
+                <td>@product.AvailabilityStatus</td>
+                <td>@product.CategoryID</td>
+                <td>@product.BrandID</td>
+                <td>@product.Active</td>
+            </tr>
+        }
+
+    </tbody>
+</table>

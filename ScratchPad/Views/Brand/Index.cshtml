@@ -1,0 +1,28 @@
+﻿@model List<ScratchPad.Models.Brand>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Brands</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                BrandID
+            </th>
+            <th>
+                Brand Name
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var brand in Model)
+        {
+            <tr>
+                <td>@brand.BrandID</td>
+                <td>@brand.BrandName</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
