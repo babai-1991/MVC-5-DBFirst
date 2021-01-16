@@ -44,5 +44,42 @@ namespace ScratchPad.Controllers
             int result = db.SaveChanges();
             return RedirectToAction("Index", "Products");
         }
+
+        public ActionResult Edit(long id)
+        {
+            var db = new EFDBFirstDatabaseEntities();
+            Product product = db.Products.SingleOrDefault(p => p.ProductID == id);
+            return View(product);
+        }
+        [HttpPost]
+        public ActionResult Edit(Product p)
+        {
+            var db = new EFDBFirstDatabaseEntities();
+            Product oldProduct = db.Products.SingleOrDefault(pr => pr.ProductID == p.ProductID);
+            //Now update
+            if (oldProduct != null)
+            {
+                oldProduct.ProductName = p.ProductName;
+                oldProduct.Price = p.Price;
+                oldProduct.DateOfPurchase = p.DateOfPurchase;
+                oldProduct.AvailabilityStatus = p.AvailabilityStatus;
+                oldProduct.CategoryID = p.CategoryID;
+                oldProduct.BrandID = p.BrandID;
+                oldProduct.Active = p.Active??false;
+            }
+
+            db.SaveChanges();
+            return RedirectToAction("Index","Products");
+        }
+
+        public ActionResult Delete(long id)
+        {
+            var db = new EFDBFirstDatabaseEntities();
+            Product product = db.Products.SingleOrDefault(pr => pr.ProductID == id);
+            //deletion
+            db.Products.Remove(product);
+            db.SaveChanges();
+            return RedirectToAction("Index", "Products");
+        }
     }
 }

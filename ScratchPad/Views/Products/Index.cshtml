@@ -48,17 +48,23 @@
     <tbody>
         @foreach (var product in Model)
         {
-            <tr>
-                <td>@product.ProductID</td>
-                <td>@product.ProductName</td>
-                <td>@product.Price.Value.ToString("C")</td>
-                <td>@product.DateOfPurchase.Value.ToString("D")</td>
-                <td>@product.AvailabilityStatus</td>
-                <td>@product.CategoryID</td>
-                <td>@product.BrandID</td>
-                <td>@product.Active</td>
-                <td><a href=@Url.Action("Details","Products",new {id=@product.ProductID})>Details</a></td>
-            </tr>
+        <tr>
+            <td>@product.ProductID</td>
+            <td>@product.ProductName</td>
+            <td>@product.Price.Value.ToString("C")</td>
+            <td>@product.DateOfPurchase.Value.ToString("D")</td>
+            <td>@product.AvailabilityStatus</td>
+            <td>@product.CategoryID</td>
+            <td>@product.BrandID</td>
+            <td>@product.Active</td>
+            <td><a href=@Url.Action("Details","Products",new {id=@product.ProductID})>Details</a></td>
+            <td>
+                <a href=@Url.Action("Edit","Products",new {id=@product.ProductID})>Edit</a>
+            </td>
+            <td>
+                <a href=@Url.Action("Delete","Products",new {id=@product.ProductID})>Delete</a>
+            </td>
+        </tr>
         }
 
     </tbody>
