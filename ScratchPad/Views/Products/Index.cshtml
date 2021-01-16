@@ -5,7 +5,18 @@
 }
 
 <h2>Products</h2>
-<table class="table">
+<div class="d-flex justify-content-between">
+    <a href=@Url.Action("Create","Products")>Insert a Product</a>
+    <form class="form-inline" action=@Url.Action("Index","Products")>
+        <label for="search">Search</label>
+        <input type="search" name="searchQuery" id="search" class="form-control" value="@ViewBag.SearchTerm" />
+        <button class="btn btn-primary">GO</button>
+    </form>
+</div>
+
+
+
+<table class="table mt-2">
     <thead>
         <tr>
             <th>
@@ -46,6 +57,7 @@
                 <td>@product.CategoryID</td>
                 <td>@product.BrandID</td>
                 <td>@product.Active</td>
+                <td><a href=@Url.Action("Details","Products",new {id=@product.ProductID})>Details</a></td>
             </tr>
         }
 
