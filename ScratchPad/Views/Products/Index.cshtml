@@ -35,10 +35,10 @@
                 AvailabilityStatus
             </th>
             <th>
-                CategoryID
+                Category
             </th>
             <th>
-                BrandID
+                Brand
             </th>
             <th>
                 Active
@@ -54,8 +54,8 @@
             <td>@product.Price.Value.ToString("C")</td>
             <td>@product.DateOfPurchase.Value.ToString("D")</td>
             <td>@product.AvailabilityStatus</td>
-            <td>@product.CategoryID</td>
-            <td>@product.BrandID</td>
+            <td>@product.Category.CategoryName</td>
+            <td>@product.Brand.BrandName</td>
             <td>@product.Active</td>
             <td><a href=@Url.Action("Details","Products",new {id=@product.ProductID})>Details</a></td>
             <td>

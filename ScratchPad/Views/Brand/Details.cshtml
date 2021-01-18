@@ -1,0 +1,33 @@
+﻿@model ScratchPad.Models.Brand
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details Of the Brand</h2>
+<table class="table mt-2">
+    <tr>
+        <th>
+            Brand Id
+        </th>
+        <td>
+            @Model.BrandID
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Brand Name
+        </th>
+        <td>
+            @Model.BrandName
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href=@Url.Action("Index","Brand")>Back To List</a>
+        </td>
+
+    </tr>
+</table>
+
+

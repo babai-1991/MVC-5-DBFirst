@@ -4,7 +4,15 @@
 }
 
 <h2>Brands</h2>
-<table class="table">
+<div class="d-flex justify-content-between">
+    <a href=@Url.Action("Create","Brand")>Insert a Brand</a>
+    <form class="form-inline" action=@Url.Action("Index","Brand")>
+        <label for="search">Search</label>
+        <input type="search" name="searchBrand" id="search" class="form-control" value="@ViewBag.SearchTerm" />
+        <button class="btn btn-primary">GO</button>
+    </form>
+</div>
+<table class="table mt-2">
     <thead>
         <tr>
             <th>
@@ -21,6 +29,15 @@
             <tr>
                 <td>@brand.BrandID</td>
                 <td>@brand.BrandName</td>
+                <td>
+                    <a href=@Url.Action("Details","Brand",new {id=@brand.BrandID})>Details</a>
+                </td>
+                <td>
+                    <a href=@Url.Action("Edit","Brand",new {id=@brand.BrandID})>Edit</a>
+                </td>
+                <td>
+                    <a href=@Url.Action("Delete","Brand",new {id=@brand.BrandID})>Delete</a>
+                </td>
             </tr>
         }
 

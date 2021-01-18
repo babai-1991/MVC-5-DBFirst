@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<form method="post" action=@Url.Action("Create","Category")>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="CategoryName">Category Name</label>
+            <input type="text" class="form-control" id="CategoryName" name="CategoryName" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Create</button>
+    <a href=@Url.Action("Index","Category") class="btn btn-danger">Cancel</a>
+</form>
