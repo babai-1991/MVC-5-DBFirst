@@ -18,27 +18,132 @@
 
 <table class="table mt-2">
     <thead>
-        <tr>
+        <tr class="table-secondary">
             <th>
-                ProductID
+                @if (ViewBag.IconClass == "fa-sort-asc")
+                {
+                    <a href=@Url.Action("Index","Products",new {columnName="ProductID",iconClass="fa-sort-desc"})>ProductID</a>
+                    if (ViewBag.SortColumn == "ProductID")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href=@Url.Action("Index","Products",new {columnName="ProductID",iconClass="fa-sort-asc"})>ProductID</a>
+                    if (ViewBag.SortColumn == "ProductID")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
             </th>
             <th>
-                ProductName
+                @if (ViewBag.IconClass == "fa-sort-asc")
+                {
+                    <a href=@Url.Action("Index","Products",new {columnName="ProductName",iconClass="fa-sort-desc"})>Product Name</a>
+                    if (ViewBag.SortColumn == "ProductName")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href=@Url.Action("Index","Products",new {columnName="ProductName",iconClass="fa-sort-asc"})>Product Name</a>
+                    if (ViewBag.SortColumn == "ProductName")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
             </th>
             <th>
-                Price
+                @if (ViewBag.IconClass == "fa-sort-asc")
+                {
+                    <a href=@Url.Action("Index","Products",new {columnName="Price",iconClass="fa-sort-desc"})>Price</a>
+                    if (ViewBag.SortColumn == "Price")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href=@Url.Action("Index","Products",new {columnName="Price",iconClass="fa-sort-asc"})>Price</a>
+                    if (ViewBag.SortColumn == "Price")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
             </th>
             <th>
-                DateOfPurchase
+                @if (ViewBag.IconClass == "fa-sort-asc")
+                {
+                    <a href=@Url.Action("Index","Products",new {columnName="DateOfPurchase",iconClass="fa-sort-desc"})>DateOfPurchase</a>
+                    if (ViewBag.SortColumn == "DateOfPurchase")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href=@Url.Action("Index","Products",new {columnName="DateOfPurchase",iconClass="fa-sort-asc"})>DateOfPurchase</a>
+                    if (ViewBag.SortColumn == "DateOfPurchase")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
             </th>
             <th>
-                AvailabilityStatus
+                @if (ViewBag.IconClass == "fa-sort-asc")
+                {
+                    <a href=@Url.Action("Index","Products",new {columnName="AvailabilityStatus",iconClass="fa-sort-desc"})>AvailabilityStatus</a>
+                    if (ViewBag.SortColumn == "AvailabilityStatus")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href=@Url.Action("Index","Products",new {columnName="AvailabilityStatus",iconClass="fa-sort-asc"})>AvailabilityStatus</a>
+                    if (ViewBag.SortColumn == "AvailabilityStatus")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
             </th>
             <th>
-                Category
+                @if (ViewBag.IconClass == "fa-sort-asc")
+                {
+                    <a href=@Url.Action("Index","Products",new {columnName="Category",iconClass="fa-sort-desc"})>Category</a>
+                    if (ViewBag.SortColumn == "Category")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href=@Url.Action("Index","Products",new {columnName="Category",iconClass="fa-sort-asc"})>Category</a>
+                    if (ViewBag.SortColumn == "Category")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
             </th>
             <th>
-                Brand
+                @if (ViewBag.IconClass == "fa-sort-asc")
+                {
+                    <a href=@Url.Action("Index","Products",new {columnName="Brand",iconClass="fa-sort-desc"})>Brand</a>
+                    if (ViewBag.SortColumn == "Brand")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href=@Url.Action("Index","Products",new {columnName="Brand",iconClass="fa-sort-asc"})>Brand</a>
+                    if (ViewBag.SortColumn == "Brand")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
             </th>
             <th>
                 Active
@@ -48,23 +153,23 @@
     <tbody>
         @foreach (var product in Model)
         {
-        <tr>
-            <td>@product.ProductID</td>
-            <td>@product.ProductName</td>
-            <td>@product.Price.Value.ToString("C")</td>
-            <td>@product.DateOfPurchase.Value.ToString("D")</td>
-            <td>@product.AvailabilityStatus</td>
-            <td>@product.Category.CategoryName</td>
-            <td>@product.Brand.BrandName</td>
-            <td>@product.Active</td>
-            <td><a href=@Url.Action("Details","Products",new {id=@product.ProductID})>Details</a></td>
-            <td>
-                <a href=@Url.Action("Edit","Products",new {id=@product.ProductID})>Edit</a>
-            </td>
-            <td>
-                <a href=@Url.Action("Delete","Products",new {id=@product.ProductID})>Delete</a>
-            </td>
-        </tr>
+            <tr>
+                <td>@product.ProductID</td>
+                <td>@product.ProductName</td>
+                <td>@product.Price.Value.ToString("C")</td>
+                <td>@product.DateOfPurchase.Value.ToString("D")</td>
+                <td>@product.AvailabilityStatus</td>
+                <td>@product.Category.CategoryName</td>
+                <td>@product.Brand.BrandName</td>
+                <td>@product.Active</td>
+                <td><a href=@Url.Action("Details","Products",new {id=@product.ProductID})>Details</a></td>
+                <td>
+                    <a href=@Url.Action("Edit","Products",new {id=@product.ProductID})>Edit</a>
+                </td>
+                <td>
+                    <a href=@Url.Action("Delete","Products",new {id=@product.ProductID})>Delete</a>
+                </td>
+            </tr>
         }
 
     </tbody>
