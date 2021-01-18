@@ -34,6 +34,9 @@ namespace ScratchPad.Controllers
 
         public ActionResult Create()
         {
+            var db = new EFDBFirstDatabaseEntities();
+            ViewBag.Categories = db.Categories.ToList();
+            ViewBag.Brands = db.Brands.ToList();
             return View();
         }
         [HttpPost]
@@ -49,6 +52,8 @@ namespace ScratchPad.Controllers
         {
             var db = new EFDBFirstDatabaseEntities();
             Product product = db.Products.SingleOrDefault(p => p.ProductID == id);
+            ViewBag.Categories = db.Categories.ToList();
+            ViewBag.Brands = db.Brands.ToList();
             return View(product);
         }
         [HttpPost]

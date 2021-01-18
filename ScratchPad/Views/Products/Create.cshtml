@@ -1,4 +1,5 @@
-﻿
+﻿@using ScratchPad.Models
+
 @{
     ViewBag.Title = "Create";
 }
@@ -24,19 +25,38 @@
 
         <div class="form-group col-md-6">
             <label for="AvailabilityStatus">Availability Status</label>
-            <input type="text" class="form-control" id="AvailabilityStatus" name="AvailabilityStatus" />
+            @*<input type="text" class="form-control" id="AvailabilityStatus" name="AvailabilityStatus" />*@
+        <select class="form-control" id="AvailabilityStatus" name="AvailabilityStatus">
+            <option value="">Please select</option>
+            <option value="InStock">In Stock</option>
+            <option value="OutOfStock">Out Of Stock</option>
+        </select>
         </div>
     </div>
 
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="CategoryID">Category ID</label>
-            <input type="text" class="form-control" id="CategoryID" name="CategoryID" />
+            @*<input type="text" class="form-control" id="CategoryID" name="CategoryID" />*@
+            <select class="form-control" id="CategoryID" name="CategoryID">
+                <option value="">Please Select</option>
+                @foreach (Category cat in (List<Category>) ViewBag.Categories)
+                {
+                    <option value=@cat.CategoryID>@cat.CategoryName</option>
+                }
+            </select>
         </div>
 
         <div class="form-group col-md-6">
             <label for="BrandID">Brand ID</label>
-            <input type="text" class="form-control" id="BrandID" name="BrandID" />
+            @*<input type="text" class="form-control" id="BrandID" name="BrandID" />*@
+            <select class="form-control" id="BrandID" name="BrandID">
+                <option value="">Please Select</option>
+                @foreach (Brand brand in (List<Brand>)ViewBag.Brands)
+                {
+                    <option value=@brand.BrandID>@brand.BrandName</option>
+                }
+            </select>
         </div>
     </div>
     <div class="form-row">

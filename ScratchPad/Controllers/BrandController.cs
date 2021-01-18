@@ -45,10 +45,15 @@ namespace ScratchPad.Controllers
 
         public ActionResult Delete(long id)
         {
+            //delete the brand only if not exist in product
             var db = new EFDBFirstDatabaseEntities();
             Brand brand = db.Brands.SingleOrDefault(br => br.BrandID == id);
-            db.Brands.Remove(brand);
-            db.SaveChanges();
+            if (brand != null && brand.Products.Count <= 0)
+            {
+                db.Brands.Remove(brand);
+                db.SaveChanges();
+            }
+            
             return RedirectToAction("Index", "Brand");
         }
 
