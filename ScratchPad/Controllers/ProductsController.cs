@@ -17,7 +17,7 @@ namespace ScratchPad.Controllers
             return db;
         }
         // GET: Category
-        public ActionResult Index(string searchQuery = "", string columnName = "ProductID", string iconClass = "fa-sort-asc")
+        public ActionResult Index(string searchQuery = "", string columnName = "ProductID", string iconClass = "fa-sort-asc",int currentPageNo =1)
         {
             ViewBag.SearchTerm = searchQuery;
             var db = DatabaseOperation();
@@ -58,6 +58,17 @@ namespace ScratchPad.Controllers
             {
                 products = ViewBag.IconClass == "fa-sort-asc" ? products.OrderBy(p => p.Category.CategoryName).ToList() : products.OrderByDescending(p => p.Category.CategoryName).ToList();
             }
+
+            /**************
+             * Paging
+             **************
+             */
+            int noOfRecordsPerPage = 5;
+            int totalNoOfPages = Convert.ToInt16(Math.Ceiling(Convert.ToDouble(products.Count) / noOfRecordsPerPage));
+            int noOfRecordsToSkip = (currentPageNo - 1) * noOfRecordsPerPage;
+            ViewBag.CurrentPageNo = currentPageNo;
+            ViewBag.TotalNoOfPages = totalNoOfPages;
+            products = products.Skip(noOfRecordsToSkip).Take(noOfRecordsPerPage).ToList();
             return View(products);
         }
 
