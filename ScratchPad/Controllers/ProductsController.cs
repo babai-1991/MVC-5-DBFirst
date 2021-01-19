@@ -90,6 +90,14 @@ namespace ScratchPad.Controllers
         public ActionResult Create(Product product)
         {
             var db = new EFDBFirstDatabaseEntities();
+            if (Request.Files.Count >= 1)
+            {
+                var file = Request.Files[0];
+                var imgBytes = new Byte[file.ContentLength];
+                file.InputStream.Read(imgBytes, 0, file.ContentLength);
+                var base64String = Convert.ToBase64String(imgBytes, 0, imgBytes.Length);
+                product.Photo = base64String;
+            }
             db.Products.Add(product);
             int result = db.SaveChanges();
             return RedirectToAction("Index", "Products");
@@ -118,6 +126,15 @@ namespace ScratchPad.Controllers
                 oldProduct.CategoryID = p.CategoryID;
                 oldProduct.BrandID = p.BrandID;
                 oldProduct.Active = p.Active ?? false;
+            }
+            //image upload
+            if (Request.Files.Count >= 1)
+            {
+                var file = Request.Files[0];
+                var imgBytes = new Byte[file.ContentLength];
+                file.InputStream.Read(imgBytes, 0, file.ContentLength);
+                var base64String = Convert.ToBase64String(imgBytes, 0, imgBytes.Length);
+                oldProduct.Photo = base64String;
             }
 
             db.SaveChanges();

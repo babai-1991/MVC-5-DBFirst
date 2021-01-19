@@ -7,7 +7,7 @@
 
 <h2>Edit</h2>
 
-<form method="post" action=@Url.Action("Edit", "Products")>
+<form method="post" action=@Url.Action("Edit", "Products") enctype="multipart/form-data">
     <input type="hidden" name="ProductID" value="@Model.ProductID" />
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -71,6 +71,10 @@
         </div>
     </div>
     <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="Image">Image</label>
+            <input type="file" class="form-control-file" id="Image" name="Photo" />
+        </div>
         <div class="form-group col-md-6">
             <label for="active">Active</label>
             <input type="checkbox" id="active" name="Active" value="true" checked="@Model.Active" />

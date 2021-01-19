@@ -18,142 +18,148 @@
 
 <table class="table mt-2">
     <thead>
-        <tr class="table-secondary">
-            <th>
-                @if (ViewBag.IconClass == "fa-sort-asc")
+    <tr class="table-secondary">
+        <th>
+            Image
+        </th>
+        <th>
+            @if (ViewBag.IconClass == "fa-sort-asc")
+            {
+                <a href=@Url.Action("Index", "Products", new {columnName = "ProductID", iconClass = "fa-sort-desc", currentPageNo = 1})>ProductID</a>
+                if (ViewBag.SortColumn == "ProductID")
                 {
-                    <a href=@Url.Action("Index","Products",new {columnName="ProductID",iconClass="fa-sort-desc",currentPageNo=1})>ProductID</a>
-                    if (ViewBag.SortColumn == "ProductID")
-                    {
-                        <i class="fa @ViewBag.IconClass"></i>
-                    }
+                    <i class="fa @ViewBag.IconClass"></i>
                 }
-                else
+            }
+            else
+            {
+                <a href=@Url.Action("Index", "Products", new {columnName = "ProductID", iconClass = "fa-sort-asc", currentPageNo = 1})>ProductID</a>
+                if (ViewBag.SortColumn == "ProductID")
                 {
-                    <a href=@Url.Action("Index","Products",new {columnName="ProductID",iconClass="fa-sort-asc",currentPageNo=1})>ProductID</a>
-                    if (ViewBag.SortColumn == "ProductID")
-                    {
-                        <i class="fa @ViewBag.IconClass"></i>
-                    }
+                    <i class="fa @ViewBag.IconClass"></i>
                 }
-            </th>
-            <th>
-                @if (ViewBag.IconClass == "fa-sort-asc")
+            }
+        </th>
+        <th>
+            @if (ViewBag.IconClass == "fa-sort-asc")
+            {
+                <a href=@Url.Action("Index", "Products", new {columnName = "ProductName", iconClass = "fa-sort-desc", currentPageNo = 1})>Product Name</a>
+                if (ViewBag.SortColumn == "ProductName")
                 {
-                    <a href=@Url.Action("Index","Products",new {columnName="ProductName",iconClass="fa-sort-desc",currentPageNo=1})>Product Name</a>
-                    if (ViewBag.SortColumn == "ProductName")
-                    {
-                        <i class="fa @ViewBag.IconClass"></i>
-                    }
+                    <i class="fa @ViewBag.IconClass"></i>
                 }
-                else
+            }
+            else
+            {
+                <a href=@Url.Action("Index", "Products", new {columnName = "ProductName", iconClass = "fa-sort-asc", currentPageNo = 1})>Product Name</a>
+                if (ViewBag.SortColumn == "ProductName")
                 {
-                    <a href=@Url.Action("Index","Products",new {columnName="ProductName",iconClass="fa-sort-asc",currentPageNo=1})>Product Name</a>
-                    if (ViewBag.SortColumn == "ProductName")
-                    {
-                        <i class="fa @ViewBag.IconClass"></i>
-                    }
+                    <i class="fa @ViewBag.IconClass"></i>
                 }
-            </th>
-            <th>
-                @if (ViewBag.IconClass == "fa-sort-asc")
+            }
+        </th>
+        <th>
+            @if (ViewBag.IconClass == "fa-sort-asc")
+            {
+                <a href=@Url.Action("Index", "Products", new {columnName = "Price", iconClass = "fa-sort-desc", currentPageNo = 1})>Price</a>
+                if (ViewBag.SortColumn == "Price")
                 {
-                    <a href=@Url.Action("Index","Products",new {columnName="Price",iconClass="fa-sort-desc",currentPageNo=1})>Price</a>
-                    if (ViewBag.SortColumn == "Price")
-                    {
-                        <i class="fa @ViewBag.IconClass"></i>
-                    }
+                    <i class="fa @ViewBag.IconClass"></i>
                 }
-                else
+            }
+            else
+            {
+                <a href=@Url.Action("Index", "Products", new {columnName = "Price", iconClass = "fa-sort-asc", currentPageNo = 1})>Price</a>
+                if (ViewBag.SortColumn == "Price")
                 {
-                    <a href=@Url.Action("Index","Products",new {columnName="Price",iconClass="fa-sort-asc",currentPageNo=1})>Price</a>
-                    if (ViewBag.SortColumn == "Price")
-                    {
-                        <i class="fa @ViewBag.IconClass"></i>
-                    }
+                    <i class="fa @ViewBag.IconClass"></i>
                 }
-            </th>
-            <th>
-                @if (ViewBag.IconClass == "fa-sort-asc")
+            }
+        </th>
+        <th>
+            @if (ViewBag.IconClass == "fa-sort-asc")
+            {
+                <a href=@Url.Action("Index", "Products", new {columnName = "DateOfPurchase", iconClass = "fa-sort-desc", currentPageNo = 1})>DateOfPurchase</a>
+                if (ViewBag.SortColumn == "DateOfPurchase")
                 {
-                    <a href=@Url.Action("Index","Products",new {columnName="DateOfPurchase",iconClass="fa-sort-desc",currentPageNo=1})>DateOfPurchase</a>
-                    if (ViewBag.SortColumn == "DateOfPurchase")
-                    {
-                        <i class="fa @ViewBag.IconClass"></i>
-                    }
+                    <i class="fa @ViewBag.IconClass"></i>
                 }
-                else
+            }
+            else
+            {
+                <a href=@Url.Action("Index", "Products", new {columnName = "DateOfPurchase", iconClass = "fa-sort-asc", currentPageNo = 1})>DateOfPurchase</a>
+                if (ViewBag.SortColumn == "DateOfPurchase")
                 {
-                    <a href=@Url.Action("Index","Products",new {columnName="DateOfPurchase",iconClass="fa-sort-asc",currentPageNo=1})>DateOfPurchase</a>
-                    if (ViewBag.SortColumn == "DateOfPurchase")
-                    {
-                        <i class="fa @ViewBag.IconClass"></i>
-                    }
+                    <i class="fa @ViewBag.IconClass"></i>
                 }
-            </th>
-            <th>
-                @if (ViewBag.IconClass == "fa-sort-asc")
+            }
+        </th>
+        <th>
+            @if (ViewBag.IconClass == "fa-sort-asc")
+            {
+                <a href=@Url.Action("Index", "Products", new {columnName = "AvailabilityStatus", iconClass = "fa-sort-desc", currentPageNo = 1})>AvailabilityStatus</a>
+                if (ViewBag.SortColumn == "AvailabilityStatus")
                 {
-                    <a href=@Url.Action("Index","Products",new {columnName="AvailabilityStatus",iconClass="fa-sort-desc",currentPageNo=1})>AvailabilityStatus</a>
-                    if (ViewBag.SortColumn == "AvailabilityStatus")
-                    {
-                        <i class="fa @ViewBag.IconClass"></i>
-                    }
+                    <i class="fa @ViewBag.IconClass"></i>
                 }
-                else
+            }
+            else
+            {
+                <a href=@Url.Action("Index", "Products", new {columnName = "AvailabilityStatus", iconClass = "fa-sort-asc", currentPageNo = 1})>AvailabilityStatus</a>
+                if (ViewBag.SortColumn == "AvailabilityStatus")
                 {
-                    <a href=@Url.Action("Index","Products",new {columnName="AvailabilityStatus",iconClass="fa-sort-asc",currentPageNo=1})>AvailabilityStatus</a>
-                    if (ViewBag.SortColumn == "AvailabilityStatus")
-                    {
-                        <i class="fa @ViewBag.IconClass"></i>
-                    }
+                    <i class="fa @ViewBag.IconClass"></i>
                 }
-            </th>
-            <th>
-                @if (ViewBag.IconClass == "fa-sort-asc")
+            }
+        </th>
+        <th>
+            @if (ViewBag.IconClass == "fa-sort-asc")
+            {
+                <a href=@Url.Action("Index", "Products", new {columnName = "Category", iconClass = "fa-sort-desc", currentPageNo = 1})>Category</a>
+                if (ViewBag.SortColumn == "Category")
                 {
-                    <a href=@Url.Action("Index","Products",new {columnName="Category",iconClass="fa-sort-desc",currentPageNo=1})>Category</a>
-                    if (ViewBag.SortColumn == "Category")
-                    {
-                        <i class="fa @ViewBag.IconClass"></i>
-                    }
+                    <i class="fa @ViewBag.IconClass"></i>
                 }
-                else
+            }
+            else
+            {
+                <a href=@Url.Action("Index", "Products", new {columnName = "Category", iconClass = "fa-sort-asc", currentPageNo = 1})>Category</a>
+                if (ViewBag.SortColumn == "Category")
                 {
-                    <a href=@Url.Action("Index","Products",new {columnName="Category",iconClass="fa-sort-asc",currentPageNo=1})>Category</a>
-                    if (ViewBag.SortColumn == "Category")
-                    {
-                        <i class="fa @ViewBag.IconClass"></i>
-                    }
+                    <i class="fa @ViewBag.IconClass"></i>
                 }
-            </th>
-            <th>
-                @if (ViewBag.IconClass == "fa-sort-asc")
+            }
+        </th>
+        <th>
+            @if (ViewBag.IconClass == "fa-sort-asc")
+            {
+                <a href=@Url.Action("Index", "Products", new {columnName = "Brand", iconClass = "fa-sort-desc", currentPageNo = 1})>Brand</a>
+                if (ViewBag.SortColumn == "Brand")
                 {
-                    <a href=@Url.Action("Index","Products",new {columnName="Brand",iconClass="fa-sort-desc",currentPageNo=1})>Brand</a>
-                    if (ViewBag.SortColumn == "Brand")
-                    {
-                        <i class="fa @ViewBag.IconClass"></i>
-                    }
+                    <i class="fa @ViewBag.IconClass"></i>
                 }
-                else
+            }
+            else
+            {
+                <a href=@Url.Action("Index", "Products", new {columnName = "Brand", iconClass = "fa-sort-asc", currentPageNo = 1})>Brand</a>
+                if (ViewBag.SortColumn == "Brand")
                 {
-                    <a href=@Url.Action("Index","Products",new {columnName="Brand",iconClass="fa-sort-asc",currentPageNo=1})>Brand</a>
-                    if (ViewBag.SortColumn == "Brand")
-                    {
-                        <i class="fa @ViewBag.IconClass"></i>
-                    }
+                    <i class="fa @ViewBag.IconClass"></i>
                 }
-            </th>
-            <th>
-                Active
-            </th>
-        </tr>
+            }
+        </th>
+        <th>
+            Active
+        </th>
+    </tr>
     </thead>
     <tbody>
         @foreach (var product in Model)
         {
             <tr>
+                <td>
+                    <img src="data:image;base64,@product.Photo" width="100px" height="100px" />
+                </td>
                 <td>@product.ProductID</td>
                 <td>@product.ProductName</td>
                 <td>@product.Price.Value.ToString("C")</td>
@@ -162,12 +168,12 @@
                 <td>@product.Category.CategoryName</td>
                 <td>@product.Brand.BrandName</td>
                 <td>@product.Active</td>
-                <td><a href=@Url.Action("Details","Products",new {id=@product.ProductID})>Details</a></td>
+                <td><a href=@Url.Action("Details", "Products", new {id = @product.ProductID})>Details</a></td>
                 <td>
-                    <a href=@Url.Action("Edit","Products",new {id=@product.ProductID})>Edit</a>
+                    <a href=@Url.Action("Edit", "Products", new {id = @product.ProductID})>Edit</a>
                 </td>
                 <td>
-                    <a href=@Url.Action("Delete","Products",new {id=@product.ProductID})>Delete</a>
+                    <a href=@Url.Action("Delete", "Products", new {id = @product.ProductID})>Delete</a>
                 </td>
             </tr>
         }
