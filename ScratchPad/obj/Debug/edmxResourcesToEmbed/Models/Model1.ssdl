@@ -13,6 +13,7 @@
     </Key>
     <Property Name="CategoryID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CategoryName" Type="varchar" MaxLength="40" />
+    <Property Name="Photo" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="Products">
     <Key>

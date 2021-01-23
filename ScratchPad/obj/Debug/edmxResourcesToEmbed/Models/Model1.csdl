@@ -15,6 +15,7 @@
     <Property Name="CategoryID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CategoryName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Products" Relationship="Self.FK__Products__Catego__145C0A3F" FromRole="Categories" ToRole="Products" />
+    <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Product">
     <Key>

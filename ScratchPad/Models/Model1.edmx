@@ -18,6 +18,7 @@
           </Key>
           <Property Name="CategoryID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CategoryName" Type="varchar" MaxLength="40" />
+          <Property Name="Photo" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
@@ -89,6 +90,7 @@
           <Property Name="CategoryID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Products" Relationship="Self.FK__Products__Catego__145C0A3F" FromRole="Categories" ToRole="Products" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -160,6 +162,7 @@
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="EFDBFirstDatabaseModel.Category">
               <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
               </MappingFragment>

@@ -12,6 +12,7 @@
     <EntitySetMapping Name="Categories">
       <EntityTypeMapping TypeName="EFDBFirstDatabaseModel.Category">
         <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
           <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
           <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
         </MappingFragment>

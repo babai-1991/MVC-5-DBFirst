@@ -32,6 +32,17 @@ namespace ScratchPad.Controllers
         public ActionResult Create(Category cat)
         {
             var db = new EFDBFirstDatabaseEntities();
+            if (Request.Files.Count >= 1)
+            {
+                var file = Request.Files[0];
+                string ImageName = System.IO.Path.GetFileName(file.FileName);
+                string virtualPath = "~/upload-img/" + ImageName;
+                string physicalPath = Server.MapPath(virtualPath);
+
+                // save image in folder
+                file.SaveAs(physicalPath);
+                cat.Photo = virtualPath;
+            }
             db.Categories.Add(cat);
             db.SaveChanges();
             return RedirectToAction("Index", "Category");

@@ -1,75 +1,72 @@
 ﻿@using ScratchPad.Models
+@model ScratchPad.Models.Product
 
 @{
     ViewBag.Title = "Create";
 }
 
 <h2>Create</h2>
-
-<form method="post" action=@Url.Action("Create","Products") enctype="multipart/form-data">
+@using (Html.BeginForm("Create", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="productName">Product Name</label>
-            <input type="text" class="form-control" id="productName" name="ProductName" />
+            @Html.LabelFor(m => m.ProductName, new { @for = "productName" })
+            @Html.TextBoxFor(p => p.ProductName, new { @class = "form-control", id = "productName", placeholder = "Name" })
+
         </div>
         <div class="form-group col-md-6">
-            <label for="productPrice">Product Price</label>
-            <input type="text" class="form-control" id="productPrice" name="Price" />
+            @Html.LabelFor(p => p.Price, new { @for = "productPrice" })
+            @Html.TextBoxFor(p => p.Price, new { @class = "form-control", id = "productPrice", placeholder = "price" })
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="DateOfPurchase">Date Of Purchase</label>
-            <input type="date" class="form-control" id="DateOfPurchase" name="DateOfPurchase" />
+            @Html.LabelFor(m => m.DateOfPurchase, new { @for = "DateOfPurchase" })
+            @Html.TextBoxFor(m => m.DateOfPurchase, new { @class = "form-control", id = "DateOfPurchase", Type = "date" })
         </div>
 
         <div class="form-group col-md-6">
-            <label for="AvailabilityStatus">Availability Status</label>
-            @*<input type="text" class="form-control" id="AvailabilityStatus" name="AvailabilityStatus" />*@
-        <select class="form-control" id="AvailabilityStatus" name="AvailabilityStatus">
-            <option value="">Please select</option>
-            <option value="InStock">In Stock</option>
-            <option value="OutOfStock">Out Of Stock</option>
-        </select>
+            @Html.LabelFor(p => p.AvailabilityStatus, new { @for = "AvailabilityStatus" })
+            @Html.DropDownListFor(p => p.AvailabilityStatus, new List<SelectListItem>()
+            {
+                new SelectListItem(){Text = "In Stock",Value = "InStock"},
+                new SelectListItem(){Text = "Out Of Stock",Value = "OutOfStock"},
+            }, "Please select", new { @id = "AvailabilityStatus", @class = "form-control" })
         </div>
     </div>
 
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="CategoryID">Category ID</label>
-            @*<input type="text" class="form-control" id="CategoryID" name="CategoryID" />*@
-            <select class="form-control" id="CategoryID" name="CategoryID">
-                <option value="">Please Select</option>
-                @foreach (Category cat in (List<Category>) ViewBag.Categories)
-                {
-                    <option value=@cat.CategoryID>@cat.CategoryName</option>
-                }
-            </select>
+            @Html.LabelFor(p => p.CategoryID, "Category", new { @for = "CategoryID" })
+
+            @Html.DropDownListFor(p => p.CategoryID
+                , new SelectList(ViewBag.Categories, "CategoryID", "CategoryName")
+                , "Please select"
+                , new { @class = "form-control", id = "CategoryID" })
         </div>
 
         <div class="form-group col-md-6">
-            <label for="BrandID">Brand ID</label>
-            @*<input type="text" class="form-control" id="BrandID" name="BrandID" />*@
-            <select class="form-control" id="BrandID" name="BrandID">
-                <option value="">Please Select</option>
-                @foreach (Brand brand in (List<Brand>)ViewBag.Brands)
-                {
-                    <option value=@brand.BrandID>@brand.BrandName</option>
-                }
-            </select>
+            @*<label for="BrandID">Brand ID</label>*@
+            @Html.LabelFor(p => p.BrandID, "Select Brand", new { @for = "BrandID" })
+
+            @Html.DropDownListFor(p => p.BrandID
+                , new SelectList(ViewBag.Brands, "BrandID", "BrandName")
+                , "Please select"
+                , new { id = "BrandID", @class = "form-control" })
         </div>
     </div>
 
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="Image">Image</label>
-            <input type="file" class="form-control-file" id="Image" name="Photo"/>
+            <input type="file" class="form-control-file" id="Image" name="Photo" />
         </div>
         <div class="form-group col-md-6">
-            <label for="active">Active</label>
-            <input type="checkbox" id="active" name="Active" value="true"/>
+          @Html.LabelFor(p=>p.Active,new{@for="active"})
+          @Html.CheckBoxFor(p=>p.Active.Value,new {@id= "active",value="true" })
+          @*<input type="checkbox" id="active" name="Active" value="true" />*@
         </div>
     </div>
     <button type="submit" class="btn btn-success">Create</button>
     <a href=@Url.Action("Index","Products") class="btn btn-danger">Cancel</a>
-</form>
+}

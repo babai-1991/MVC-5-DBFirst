@@ -14,14 +14,17 @@
 </div>
 <table class="table mt-2">
     <thead>
-    <tr>
-        <th>
-            CategoryID
-        </th>
-        <th>
-            Category Name
-        </th>
-    </tr>
+        <tr>
+            <th>
+                CategoryID
+            </th>
+            <th>
+                Category Name
+            </th>
+            <th>
+                Image
+            </th>
+        </tr>
     </thead>
     <tbody>
     @foreach (var cat in Model)
@@ -29,6 +32,9 @@
         <tr>
             <td>@cat.CategoryID</td>
             <td>@cat.CategoryName</td>
+            <td>
+                <img src="@Url.Content(String.IsNullOrEmpty(cat.Photo)?"~/upload-img/no.png":cat.Photo)" width="100px" height="100px" />
+            </td>
             <td>
                 <a href=@Url.Action("Details","Category",new {id=@cat.CategoryID})>Details</a>
             </td>
