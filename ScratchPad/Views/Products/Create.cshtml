@@ -1,5 +1,4 @@
-﻿@using ScratchPad.Models
-@model ScratchPad.Models.Product
+﻿@model ScratchPad.Models.Product
 
 @{
     ViewBag.Title = "Create";
@@ -8,21 +7,26 @@
 <h2>Create</h2>
 @using (Html.BeginForm("Create", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            @Html.LabelFor(m => m.ProductName, new { @for = "productName" })
-            @Html.TextBoxFor(p => p.ProductName, new { @class = "form-control", id = "productName", placeholder = "Name" })
+<div class="form-row">
+    <div class="form-group col-md-6">
+        @Html.LabelFor(m => m.ProductName, new { @for = "productName" })
+        @Html.TextBoxFor(p => p.ProductName, new { @class = "form-control", id = "productName", placeholder = "Name" })
+        @Html.ValidationMessageFor(m=>m.ProductName,"",new{@class="text-danger"})
 
-        </div>
-        <div class="form-group col-md-6">
-            @Html.LabelFor(p => p.Price, new { @for = "productPrice" })
-            @Html.TextBoxFor(p => p.Price, new { @class = "form-control", id = "productPrice", placeholder = "price" })
-        </div>
     </div>
+    <div class="form-group col-md-6">
+        @Html.LabelFor(p => p.Price, new { @for = "productPrice" })
+        @Html.TextBoxFor(p => p.Price, new { @class = "form-control", id = "productPrice", placeholder = "price" })
+        @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
+
+
+    </div>
+</div>
     <div class="form-row">
         <div class="form-group col-md-6">
             @Html.LabelFor(m => m.DateOfPurchase, new { @for = "DateOfPurchase" })
             @Html.TextBoxFor(m => m.DateOfPurchase, new { @class = "form-control", id = "DateOfPurchase", Type = "date" })
+
         </div>
 
         <div class="form-group col-md-6">
@@ -32,6 +36,7 @@
                 new SelectListItem(){Text = "In Stock",Value = "InStock"},
                 new SelectListItem(){Text = "Out Of Stock",Value = "OutOfStock"},
             }, "Please select", new { @id = "AvailabilityStatus", @class = "form-control" })
+
         </div>
     </div>
 
@@ -43,6 +48,7 @@
                 , new SelectList(ViewBag.Categories, "CategoryID", "CategoryName")
                 , "Please select"
                 , new { @class = "form-control", id = "CategoryID" })
+
         </div>
 
         <div class="form-group col-md-6">
@@ -53,6 +59,7 @@
                 , new SelectList(ViewBag.Brands, "BrandID", "BrandName")
                 , "Please select"
                 , new { id = "BrandID", @class = "form-control" })
+
         </div>
     </div>
 
@@ -62,9 +69,9 @@
             <input type="file" class="form-control-file" id="Image" name="Photo" />
         </div>
         <div class="form-group col-md-6">
-          @Html.LabelFor(p=>p.Active,new{@for="active"})
-          @Html.CheckBoxFor(p=>p.Active.Value,new {@id= "active",value="true" })
-          @*<input type="checkbox" id="active" name="Active" value="true" />*@
+            @Html.LabelFor(p => p.Active, new { @for = "active" })
+            @Html.CheckBoxFor(p => p.Active.Value, new { @id = "active", value = "true" })
+            @*<input type="checkbox" id="active" name="Active" value="true" />*@
         </div>
     </div>
     <button type="submit" class="btn btn-success">Create</button>

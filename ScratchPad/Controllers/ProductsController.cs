@@ -89,18 +89,25 @@ namespace ScratchPad.Controllers
         [HttpPost]
         public ActionResult Create(Product product)
         {
-            var db = new EFDBFirstDatabaseEntities();
-            if (Request.Files.Count >= 1)
+            if (ModelState.IsValid)
             {
-                var file = Request.Files[0];
-                var imgBytes = new Byte[file.ContentLength];
-                file.InputStream.Read(imgBytes, 0, file.ContentLength);
-                var base64String = Convert.ToBase64String(imgBytes, 0, imgBytes.Length);
-                product.Photo = base64String;
+                var db = new EFDBFirstDatabaseEntities();
+                if (Request.Files.Count >= 1)
+                {
+                    var file = Request.Files[0];
+                    var imgBytes = new Byte[file.ContentLength];
+                    file.InputStream.Read(imgBytes, 0, file.ContentLength);
+                    var base64String = Convert.ToBase64String(imgBytes, 0, imgBytes.Length);
+                    product.Photo = base64String;
+                }
+
+                db.Products.Add(product);
+                int result = db.SaveChanges();
+                return RedirectToAction("Index", "Products");
+
             }
-            db.Products.Add(product);
-            int result = db.SaveChanges();
-            return RedirectToAction("Index", "Products");
+
+            return RedirectToAction("Create", "Products");
         }
 
         public ActionResult Edit(long id)

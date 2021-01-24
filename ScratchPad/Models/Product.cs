@@ -7,6 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
+using System.ComponentModel.DataAnnotations;
+
 namespace ScratchPad.Models
 {
     using System;
