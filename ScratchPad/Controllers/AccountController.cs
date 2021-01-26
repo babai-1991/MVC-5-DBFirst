@@ -63,5 +63,32 @@ namespace ScratchPad.Controllers
 
             return RedirectToAction("Register", "Account");
         }
+
+        public ActionResult LogIn()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult LogIn(LogInViewModel model)
+        {
+            //login
+            var appdbcontext = new ApplicationDbContext();
+            var appUserStore = new ApplicationUserStore(appdbcontext);
+            var appusermanager = new ApplicationUserManager(appUserStore);
+
+            var user = appusermanager.Find(model.UserName, model.Password);
+            if (user != null)
+            {
+                var authenticationManager = HttpContext.GetOwinContext().Authentication;
+                var userIdentity =
+                    appusermanager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
+                return RedirectToAction("Index", "Home");
+            }
+
+            ModelState.AddModelError("error", "username/password is invalid");
+            return View();
+
+        }
     }
 }

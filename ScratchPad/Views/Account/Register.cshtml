@@ -63,6 +63,10 @@
             <button type="submit" class="btn btn-primary">Register</button>
             <button type="reset" class="btn btn-danger" onclick="return confirm('reset')">Reset</button>
         </div>
+        <div class="form-group col-sm-6">
+            Already a user?@Html.ActionLink("Sign In", "LogIn", "Account", null, new { @class = "nav-link" })
+
+        </div>
     </div>
 }
 
