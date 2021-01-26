@@ -90,5 +90,11 @@ namespace ScratchPad.Controllers
             return View();
 
         }
+        public ActionResult LogOut()
+        {
+            var authenticationManager = HttpContext.GetOwinContext().Authentication;
+            authenticationManager.SignOut();
+            return RedirectToAction("Index","Home");
+        }
     }
 }
