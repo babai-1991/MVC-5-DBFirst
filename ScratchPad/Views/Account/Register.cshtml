@@ -1,0 +1,68 @@
+﻿@model ScratchPad.ViewModels.RegistrationViewModels
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(r => r.UserName, new { @for = "username" })
+            @Html.TextBoxFor(r => r.UserName, new { @class = "form-control", id = "username", placeholder = "User Name" })
+            @Html.ValidationMessageFor(r => r.UserName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(r => r.Email, new { @for = "email" })
+            @Html.TextBoxFor(r => r.Email, new { @class = "form-control", id = "email", placeholder = "Email" })
+            @Html.ValidationMessageFor(r => r.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(r => r.Password, new { @for = "password" })
+            @Html.TextBoxFor(r => r.Password, new { @class = "form-control", id = "password", placeholder = "Password", type = "password" })
+            @Html.ValidationMessageFor(r => r.Password, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(r => r.ConfirmPassword, new { @for = "conpassword" })
+            @Html.TextBoxFor(r => r.ConfirmPassword, new { @class = "form-control", id = "conpassword", placeholder = "retype password", type = "password" })
+            @Html.ValidationMessageFor(r => r.ConfirmPassword, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(r => r.Mobile, new { @for = "mobile" })
+            @Html.TextBoxFor(r => r.Mobile, new { @class = "form-control", id = "mobile", placeholder = "mobile" })
+            @Html.ValidationMessageFor(r => r.Mobile, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(r => r.DateOfBirth, new { @for = "dateofbirth" })
+            @Html.TextBoxFor(r => r.DateOfBirth, new { @class = "form-control", id = "dateofbirth", placeholder = "dob", type = "date" })
+            @Html.ValidationMessageFor(r => r.DateOfBirth, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(r => r.City, new { @for = "city" })
+            @Html.TextBoxFor(r => r.City, new { @class = "form-control", id = "city", placeholder = "city" })
+            @Html.ValidationMessageFor(r => r.City, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(r => r.Country, new { @for = "country" })
+            @Html.TextBoxFor(r => r.Country, new { @class = "form-control", id = "country", placeholder = "country" })
+            @Html.ValidationMessageFor(r => r.Country, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(r => r.Address, new { @for = "address" })
+            @Html.TextAreaFor(r => r.Address, new { @class = "form-control", id = "address", placeholder = "address" })
+            @Html.ValidationMessageFor(r => r.Address, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+    <div class="form-row">
+        <div class="form-group col-sm-6">
+            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="reset" class="btn btn-danger" onclick="return confirm('reset')">Reset</button>
+        </div>
+    </div>
+}
+

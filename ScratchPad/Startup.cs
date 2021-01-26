@@ -15,13 +15,7 @@ namespace ScratchPad
     {
         public void Configuration(IAppBuilder app)
         {
-            app.UseCookieAuthentication(new CookieAuthenticationOptions()
-            {
-                //This means we are going to store the user's identity details inside a cookie temporarily when he login.
-                AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                //If not logged in , redirects to Account/Login URL
-                LoginPath = new PathString("~/Account/Login")
-            });
+            app.UseCookieAuthentication(new CookieAuthenticationOptions() { AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie, LoginPath = new PathString("/Account/Login") });
 
             CreateRolesAndUsers();
         }
@@ -65,9 +59,9 @@ namespace ScratchPad
              */
             if (userManager.FindByName("Admin") == null)
             {
-                var user = new ApplicationUser() {UserName = "Admin", Email = "admin@gmail.com"};
+                var user = new ApplicationUser() { UserName = "Admin", Email = "admin@gmail.com" };
                 string password = "admin@1234";
-                
+
                 var checkUser = userManager.Create(user, password);
 
                 if (checkUser.Succeeded)

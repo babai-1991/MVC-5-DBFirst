@@ -29,11 +29,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href=@Url.Action("Index","Products")>Products</a>
                 </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Register", "Register", "Account", null, new { @class = "nav-link" })
+                </li>
 
             </ul>
         </div>
         <div class="col-3 text-white">
-            @ViewBag.Message
+            @*@ViewBag.Message*@
+            @if (User.Identity.IsAuthenticated)
+            {
+                <span> Welcome @User.Identity.Name </span>
+            }
         </div>
     </nav>
     <div class="container-fluid">
