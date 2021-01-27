@@ -6,7 +6,7 @@
 }
 
 <h2>Edit</h2>
-@using (Html.BeginForm("Edit", "Brand", FormMethod.Post, new { area = "Admin" }))
+@using (Html.BeginForm("Edit", "Brand", new{ area="Admin" }, FormMethod.Post))
 {
     <input type="hidden" name="BrandID" value="@Model.BrandID" />
     <div class="form-row">
@@ -17,6 +17,6 @@
     </div>
 
     <button type="submit" class="btn btn-success">Update</button>
-    @Html.ActionLink("Cancel", "Index", "Brand", new { area = "Admin",@class= "btn btn-danger" })
+    @Html.ActionLink("Cancel", "Index", "Brand",new{ area = "Admin" }, new {@class= "btn btn-danger" })
 }
 

@@ -3,12 +3,12 @@
 
 @{
     ViewBag.Title = "Edit";
-    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage.cshtml";
+    Layout = "~/Areas/Manager/Views/Shared/ManagerLayoutPage.cshtml";
 }
 
 <h2>Edit</h2>
 
-<form method="post" action=@Url.Action("Edit", "Products",new{area="Admin"}) enctype="multipart/form-data">
+<form method="post" action=@Url.Action("Edit", "Products",new{area="Manager"}) enctype="multipart/form-data">
     <input type="hidden" name="ProductID" value="@Model.ProductID" />
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -82,5 +82,5 @@
         </div>
     </div>
     <button type="submit" class="btn btn-success">Update</button>
-    <a href=@Url.Action("Index", "Products",new{area="Admin"}) class="btn btn-danger">Cancel</a>
+    <a href=@Url.Action("Index", "Products",new{area="Manager"}) class="btn btn-danger">Cancel</a>
 </form>

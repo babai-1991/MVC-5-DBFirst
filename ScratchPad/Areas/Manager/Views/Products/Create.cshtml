@@ -2,11 +2,11 @@
 
 @{
     ViewBag.Title = "Create";
-    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage.cshtml";
+    Layout = "~/Areas/Manager/Views/Shared/ManagerLayoutPage.cshtml";
 }
 
 <h2>Create</h2>
-@using (Html.BeginForm("Create", "Products", new { area = "Admin" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Create", "Products", new { area = "Manager" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -76,5 +76,5 @@
         </div>
     </div>
     <button type="submit" class="btn btn-success">Create</button>
-    <a href=@Url.Action("Index","Products",new{area="Admin"}) class="btn btn-danger">Cancel</a>
+    <a href=@Url.Action("Index","Products",new{area="Manager"}) class="btn btn-danger">Cancel</a>
 }

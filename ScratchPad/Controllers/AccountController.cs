@@ -87,6 +87,10 @@ namespace ScratchPad.Controllers
                 {
                     return RedirectToAction("Index", "Home", new { area = "Admin" });
                 }
+                else if (appusermanager.IsInRole(user.Id, "Manager"))
+                {
+                    return RedirectToAction("Index", "Home", new { area = "Manager" });
+                }
                 return RedirectToAction("Index", "Home");
             }
 
