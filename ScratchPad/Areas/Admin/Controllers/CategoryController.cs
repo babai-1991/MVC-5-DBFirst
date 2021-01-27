@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ScratchPad.Models;
 
-namespace ScratchPad.Controllers
+namespace ScratchPad.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
     {

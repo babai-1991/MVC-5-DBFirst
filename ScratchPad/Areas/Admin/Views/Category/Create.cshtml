@@ -1,11 +1,13 @@
 ﻿
 @{
     ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage.cshtml";
 }
 
 <h2>Create</h2>
 
-<form method="post" action=@Url.Action("Create","Category") enctype="multipart/form-data">
+@using (Html.BeginForm("Create", "Category", FormMethod.Post, new { enctype = "multipart/form-data", area = "Admin" }))
+{
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="CategoryName">Category Name</label>
@@ -15,9 +17,9 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="Image">Image</label>
-            <input type="file" class="form-control-file" id="Image" name="Photo"/>
+            <input type="file" class="form-control-file" id="Image" name="Photo" />
         </div>
     </div>
     <button type="submit" class="btn btn-success">Create</button>
-    <a href=@Url.Action("Index","Category") class="btn btn-danger">Cancel</a>
-</form>
+    <a href=@Url.Action("Index", "Category",new{area="Admin"}) class="btn btn-danger">Cancel</a>
+}

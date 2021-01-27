@@ -2,19 +2,21 @@
 
 @{
     ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage.cshtml";
 }
 
 <h2>Edit</h2>
-<form method="post" action=@Url.Action("Edit", "Category")>
+@using (Html.BeginForm("Edit", "Category", FormMethod.Post, new { area = "Admin" }))
+{
     <input type="hidden" name="CategoryID" value="@Model.CategoryID" />
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="CategoryName">Category Name</label>
             <input type="text" class="form-control" id="CategoryName" name="CategoryName" value="@Model.CategoryName" />
         </div>
-        
+
     </div>
-    
+
     <button type="submit" class="btn btn-success">Update</button>
-    <a href=@Url.Action("Index", "Category") class="btn btn-danger">Cancel</a>
-</form>
+    <a href=@Url.Action("Index", "Category",new{area="Admin"}) class="btn btn-danger">Cancel</a>
+}

@@ -1,23 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ScratchPad.Models;
 
-namespace ScratchPad.Controllers
+namespace ScratchPad.Areas.Admin.Controllers
 {
     public class ProductsController : Controller
     {
-        // GET: Products
+        // GET: Admin/Products
         public EFDBFirstDatabaseEntities DatabaseOperation()
         {
             var db = new EFDBFirstDatabaseEntities();
             return db;
         }
         // GET: Category
-        public ActionResult Index(string searchQuery = "", string columnName = "ProductID", string iconClass = "fa-sort-asc",int currentPageNo =1)
+        public ActionResult Index(string searchQuery = "", string columnName = "ProductID", string iconClass = "fa-sort-asc", int currentPageNo = 1)
         {
             ViewBag.SearchTerm = searchQuery;
             var db = DatabaseOperation();

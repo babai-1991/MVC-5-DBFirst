@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using ScratchPad.Models;
 
-namespace ScratchPad.Controllers
+namespace ScratchPad.Areas.Admin.Controllers
 {
     public class BrandController : Controller
     {
+        // GET: Admin/Brand
         public EFDBFirstDatabaseEntities DatabaseOperation()
         {
             var db = new EFDBFirstDatabaseEntities();
@@ -53,7 +54,7 @@ namespace ScratchPad.Controllers
                 db.Brands.Remove(brand);
                 db.SaveChanges();
             }
-            
+
             return RedirectToAction("Index", "Brand");
         }
 

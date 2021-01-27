@@ -83,6 +83,10 @@ namespace ScratchPad.Controllers
                 var userIdentity =
                     appusermanager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                 authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
+                if (appusermanager.IsInRole(user.Id,"Admin"))
+                {
+                    return RedirectToAction("Index", "Home", new { area = "Admin" });
+                }
                 return RedirectToAction("Index", "Home");
             }
 
@@ -94,7 +98,17 @@ namespace ScratchPad.Controllers
         {
             var authenticationManager = HttpContext.GetOwinContext().Authentication;
             authenticationManager.SignOut();
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult MyProfile()
+        {
+            var appdbcontext = new ApplicationDbContext();
+            var appUserStore = new ApplicationUserStore(appdbcontext);
+            var appusermanager = new ApplicationUserManager(appUserStore);
+
+            ApplicationUser user = appusermanager.FindById(User.Identity.GetUserId());
+            return View(user);
         }
     }
 }

@@ -20,15 +20,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href=@Url.Action("Index","Home")>Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href=@Url.Action("Index","Category")>Category</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href=@Url.Action("Index","Brand")>Brand</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href=@Url.Action("Index","Products")>Products</a>
-                </li>
+                
                 @if (!User.Identity.IsAuthenticated)
                 {
                     <li class="nav-item">
@@ -38,7 +30,14 @@
                         @Html.ActionLink("Sign In", "LogIn", "Account", null, new { @class = "nav-link" })
                     </li>
                 }
-                
+                else
+                {
+                    if (User.IsInRole("Customer"))
+                    {
+                        @Html.ActionLink("My Profile", "MyProfile", "Account", null, new {@class = "nav-link"})
+                    }
+                }
+
 
             </ul>
         </div>
@@ -46,7 +45,7 @@
             @*@ViewBag.Message*@
             @if (User.Identity.IsAuthenticated)
             {
-                <span> Welcome @User.Identity.Name </span>
+                <span class="text-white"> Welcome @User.Identity.Name</span>
                 @Html.ActionLink("Log out", "LogOut", "Account", null, new { @class = "text-white text-decoration-none" })
             }
         </div>

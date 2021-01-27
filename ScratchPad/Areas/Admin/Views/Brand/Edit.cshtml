@@ -2,11 +2,12 @@
 
 @{
     ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage.cshtml";
 }
 
 <h2>Edit</h2>
-
-<form method="post" action=@Url.Action("Edit", "Brand")>
+@using (Html.BeginForm("Edit", "Brand", FormMethod.Post, new { area = "Admin" }))
+{
     <input type="hidden" name="BrandID" value="@Model.BrandID" />
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -16,6 +17,6 @@
     </div>
 
     <button type="submit" class="btn btn-success">Update</button>
-    <a href=@Url.Action("Index", "Brand") class="btn btn-danger">Cancel</a>
-</form>
+    @Html.ActionLink("Cancel", "Index", "Brand", new { area = "Admin",@class= "btn btn-danger" })
+}
 

@@ -1,16 +1,19 @@
 ﻿@model List<ScratchPad.Models.Brand>
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage.cshtml";
 }
 
 <h2>Brands</h2>
 <div class="d-flex justify-content-between">
-    <a href=@Url.Action("Create","Brand")>Insert a Brand</a>
-    <form class="form-inline" action=@Url.Action("Index","Brand")>
+    @Html.ActionLink("Create", "Create", "Brand", new { area = "Admin" },new{@class="form-inline"})
+    @using (Html.BeginForm("Index", "Brand", null,FormMethod.Get, new { @class = "form-inline" }))
+    {
         <label for="search">Search</label>
         <input type="search" name="searchBrand" id="search" class="form-control" value="@ViewBag.SearchTerm" />
         <button class="btn btn-primary">GO</button>
-    </form>
+    }
+
 </div>
 <table class="table mt-2">
     <thead>
@@ -30,13 +33,13 @@
                 <td>@brand.BrandID</td>
                 <td>@brand.BrandName</td>
                 <td>
-                    <a href=@Url.Action("Details","Brand",new {id=@brand.BrandID})>Details</a>
+                    @Html.ActionLink("Details", "Details", "Brand", new { area = "Admin", id = @brand.BrandID })
                 </td>
                 <td>
-                    <a href=@Url.Action("Edit","Brand",new {id=@brand.BrandID})>Edit</a>
+                    @Html.ActionLink("Edit", "Edit", "Brand", new { area = "Admin", id = @brand.BrandID })
                 </td>
                 <td>
-                    <a href=@Url.Action("Delete","Brand",new {id=@brand.BrandID})>Delete</a>
+                    @Html.ActionLink("Delete", "Delete", "Brand", new { area = "Admin", id = @brand.BrandID })
                 </td>
             </tr>
         }
