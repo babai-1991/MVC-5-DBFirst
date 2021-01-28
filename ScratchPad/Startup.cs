@@ -15,7 +15,8 @@ namespace ScratchPad
     {
         public void Configuration(IAppBuilder app)
         {
-            app.UseCookieAuthentication(new CookieAuthenticationOptions() { AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie, LoginPath = new PathString("/Account/Login") });
+            app.UseCookieAuthentication(new CookieAuthenticationOptions() 
+                { AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie, LoginPath = new PathString("/Account/Login") });
 
             CreateRolesAndUsers();
         }
@@ -82,8 +83,6 @@ namespace ScratchPad
                     userManager.AddToRole(user.Id, "Manager");
                 }
             }
-
-
 
         }
     }
