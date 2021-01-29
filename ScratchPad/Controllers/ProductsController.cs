@@ -19,6 +19,7 @@ namespace ScratchPad.Controllers
         // GET: 
         [MyAuthenticationFilter]
         [CustomerAuthorizationFilter]
+  
         public ActionResult Index(string searchQuery = "", string columnName = "ProductID", string iconClass = "fa-sort-asc", int currentPageNo = 1)
         {
             ViewBag.SearchTerm = searchQuery;

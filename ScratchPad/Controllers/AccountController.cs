@@ -69,6 +69,7 @@ namespace ScratchPad.Controllers
             return View();
         }
         [HttpPost]
+        [OverrideExceptionFilters]
         public ActionResult LogIn(LogInViewModel model)
         {
             //login

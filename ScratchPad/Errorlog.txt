@@ -1,0 +1,36 @@
+==============================================================
+The exception Message The underlying provider failed on Open. 
+The Type of Exception System.Data.Entity.Core.EntityException 
+The exception source EntityFramework 
+==============================================================
+
+==============================================================
+The exception Message The underlying provider failed on Open. 
+The Type of Exception System.Data.Entity.Core.EntityException 
+The exception source EntityFramework 
+==============================================================
+
+==============================================================
+The exception Message The underlying provider failed on Open. 
+The Type of Exception System.Data.Entity.Core.EntityException 
+The exception source EntityFramework 
+==============================================================
+
+==============================================================
+The exception Message The underlying provider failed on Open. 
+The Type of Exception System.Data.Entity.Core.EntityException 
+The exception source EntityFramework 
+==============================================================
+
+==============================================================
+The exception Message The underlying provider failed on Open. 
+The Type of Exception System.Data.Entity.Core.EntityException 
+The exception source EntityFramework 
+==============================================================
+
+==============================================================
+The exception Message The underlying provider failed on Open. 
+The Type of Exception System.Data.Entity.Core.EntityException 
+The exception source EntityFramework 
+==============================================================
+
