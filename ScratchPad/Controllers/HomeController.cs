@@ -14,7 +14,7 @@ namespace ScratchPad.Controllers
 
             //Convert.ToInt16("");
             //or
-            throw new Exception("404 not found");
+            //throw new Exception("404 not found");
             return View();
         }
     }
