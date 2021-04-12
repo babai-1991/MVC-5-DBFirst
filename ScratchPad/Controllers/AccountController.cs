@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Web;
+﻿using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
@@ -15,6 +11,8 @@ namespace ScratchPad.Controllers
     public class AccountController : Controller
     {
         // GET: Account
+
+        //[ActionName("SignUp")]
         public ActionResult Register()
         {
             return View();
@@ -51,11 +49,7 @@ namespace ScratchPad.Controllers
                     appUserManager.AddToRoles(user.Id, "Customer");
 
                     //login
-                    var authenticationManager = HttpContext.GetOwinContext().Authentication;
-                    var userIdentity =
-                        appUserManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
-
-                    authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
+                    LoginUser(appUserManager, user);
                 }
 
                 return RedirectToAction("Index", "Home");
@@ -80,15 +74,13 @@ namespace ScratchPad.Controllers
             var user = appusermanager.Find(model.UserName, model.Password);
             if (user != null)
             {
-                var authenticationManager = HttpContext.GetOwinContext().Authentication;
-                var userIdentity =
-                    appusermanager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
-                authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
+                LoginUser(appusermanager, user);
                 if (appusermanager.IsInRole(user.Id,"Admin"))
                 {
                     return RedirectToAction("Index", "Home", new { area = "Admin" });
                 }
-                else if (appusermanager.IsInRole(user.Id, "Manager"))
+
+                if (appusermanager.IsInRole(user.Id, "Manager"))
                 {
                     return RedirectToAction("Index", "Home", new { area = "Manager" });
                 }
@@ -99,6 +91,16 @@ namespace ScratchPad.Controllers
             return View();
 
         }
+
+        [NonAction]
+        private void LoginUser(ApplicationUserManager appusermanager, ApplicationUser user)
+        {
+            var authenticationManager = HttpContext.GetOwinContext().Authentication;
+            var userIdentity =
+                appusermanager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+            authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
+        }
+
         public ActionResult LogOut()
         {
             var authenticationManager = HttpContext.GetOwinContext().Authentication;
