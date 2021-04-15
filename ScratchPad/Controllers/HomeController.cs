@@ -12,7 +12,7 @@ namespace ScratchPad.Controllers
         public ActionResult Index()
         {
 
-            //Convert.ToInt16("");
+            Convert.ToInt16("");
             //or
             //throw new Exception("404 not found");
             return View();
