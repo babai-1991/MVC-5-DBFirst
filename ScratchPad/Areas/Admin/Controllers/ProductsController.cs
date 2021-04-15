@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Company.ServiceContracts;
+using Company.ServiceLayer;
 using CompanyName.DataLayer;
 using CompanyName.DomainModels;
 using ScratchPad.Filters;
@@ -13,19 +15,19 @@ namespace ScratchPad.Areas.Admin.Controllers
     [AdminAuthorizationFilter]
     public class ProductsController : Controller
     {
-        // GET: Admin/Products
-        public EFDBFirstDatabaseEntities DatabaseOperation()
+        private readonly EFDBFirstDatabaseEntities _dbContext;
+        private readonly IProductService _productService;
+        public ProductsController()
         {
-            var db = new EFDBFirstDatabaseEntities();
-            return db;
+            _dbContext = new EFDBFirstDatabaseEntities();
+            _productService = new ProductService();
         }
         // GET: Category
         public ActionResult Index(string searchQuery = "", string columnName = "ProductID", string iconClass = "fa-sort-asc", int currentPageNo = 1)
         {
             ViewBag.SearchTerm = searchQuery;
-            var db = new EFDBFirstDatabaseEntities();
-            List<Product> products = db.Products.Where(p => p.ProductName.Contains(searchQuery)).ToList();
 
+            List<Product> products = _productService.SearchProducts(searchQuery);
             /*****************
              * Sorting
              *****************
@@ -75,18 +77,18 @@ namespace ScratchPad.Areas.Admin.Controllers
             return View(products);
         }
 
-        public ActionResult Details(long id)
+        public ActionResult Details(int id)
         {
-            var db = DatabaseOperation();
-            Product product = db.Products.SingleOrDefault(p => p.ProductID == id);
+
+            Product product = _productService.GetProductByProductId(id);
             return View(product);
         }
 
         public ActionResult Create()
         {
-            var db = new EFDBFirstDatabaseEntities();
-            ViewBag.Categories = db.Categories.ToList();
-            ViewBag.Brands = db.Brands.ToList();
+
+            ViewBag.Categories = _dbContext.Categories.ToList();
+            ViewBag.Brands = _dbContext.Brands.ToList();
             return View();
         }
         [HttpPost]
@@ -95,7 +97,7 @@ namespace ScratchPad.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var db = new EFDBFirstDatabaseEntities();
+
                 if (Request.Files.Count >= 1)
                 {
                     var file = Request.Files[0];
@@ -105,8 +107,8 @@ namespace ScratchPad.Areas.Admin.Controllers
                     product.Photo = base64String;
                 }
 
-                db.Products.Add(product);
-                int result = db.SaveChanges();
+                _productService.InsertProduct(product);
+
                 return RedirectToAction("Index", "Products");
 
             }
@@ -114,51 +116,24 @@ namespace ScratchPad.Areas.Admin.Controllers
             return RedirectToAction("Create", "Products");
         }
 
-        public ActionResult Edit(long id)
+        public ActionResult Edit(int id)
         {
-            var db = new EFDBFirstDatabaseEntities();
-            Product product = db.Products.SingleOrDefault(p => p.ProductID == id);
-            ViewBag.Categories = db.Categories.ToList();
-            ViewBag.Brands = db.Brands.ToList();
+
+            Product product = _productService.GetProductByProductId(id);
+            ViewBag.Categories = _dbContext.Categories.ToList();
+            ViewBag.Brands = _dbContext.Brands.ToList();
             return View(product);
         }
         [HttpPost]
         public ActionResult Edit(Product p)
         {
-            var db = new EFDBFirstDatabaseEntities();
-            Product oldProduct = db.Products.SingleOrDefault(pr => pr.ProductID == p.ProductID);
-            //Now update
-            if (oldProduct != null)
-            {
-                oldProduct.ProductName = p.ProductName;
-                oldProduct.Price = p.Price;
-                oldProduct.DateOfPurchase = p.DateOfPurchase;
-                oldProduct.AvailabilityStatus = p.AvailabilityStatus;
-                oldProduct.CategoryID = p.CategoryID;
-                oldProduct.BrandID = p.BrandID;
-                oldProduct.Active = p.Active ?? false;
-            }
-            //image upload
-            if (Request.Files.Count >= 1)
-            {
-                var file = Request.Files[0];
-                var imgBytes = new Byte[file.ContentLength];
-                file.InputStream.Read(imgBytes, 0, file.ContentLength);
-                var base64String = Convert.ToBase64String(imgBytes, 0, imgBytes.Length);
-                oldProduct.Photo = base64String;
-            }
-
-            db.SaveChanges();
+            _productService.UpdateProduct(p);
             return RedirectToAction("Index", "Products");
         }
 
-        public ActionResult Delete(long id)
+        public ActionResult Delete(int id)
         {
-            var db = new EFDBFirstDatabaseEntities();
-            Product product = db.Products.SingleOrDefault(pr => pr.ProductID == id);
-            //deletion
-            db.Products.Remove(product);
-            db.SaveChanges();
+            _productService.DeleteProduct(id);
             return RedirectToAction("Index", "Products");
         }
     }

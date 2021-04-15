@@ -373,6 +373,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Company.ServiceContracts\Company.ServiceContracts.csproj">
+      <Project>{5C3A9FEA-2428-4322-A192-5D0792348C13}</Project>
+      <Name>Company.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Company.ServiceLayer\Company.ServiceLayer.csproj">
+      <Project>{892ABCBD-3D71-44DB-A27C-A48B972D0AA7}</Project>
+      <Name>Company.ServiceLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CompanyName.DataLayer\CompanyName.DataLayer.csproj">
       <Project>{DF32272A-D34F-4790-B17B-DD7CE4AEFF73}</Project>
       <Name>CompanyName.DataLayer</Name>

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Company.ServiceContracts;
+using Company.ServiceLayer;
 using CompanyName.DataLayer;
 using CompanyName.DomainModels;
 using ScratchPad.Filters;
@@ -13,10 +15,12 @@ namespace ScratchPad.Controllers
     public class ProductsController : Controller
     {
         // GET: Admin/Products
-        public EFDBFirstDatabaseEntities DatabaseOperation()
+        private readonly EFDBFirstDatabaseEntities _dbContext;
+        private readonly IProductService _productService;
+        public ProductsController()
         {
-            var db = new EFDBFirstDatabaseEntities();
-            return db;
+            _dbContext = new EFDBFirstDatabaseEntities();
+            _productService = new ProductService();
         }
         // GET: 
         [MyAuthenticationFilter]
@@ -25,8 +29,8 @@ namespace ScratchPad.Controllers
         public ActionResult Index(string searchQuery = "", string columnName = "ProductID", string iconClass = "fa-sort-asc", int currentPageNo = 1)
         {
             ViewBag.SearchTerm = searchQuery;
-            var db = DatabaseOperation();
-            List<Product> products = db.Products.Where(p => p.ProductName.Contains(searchQuery)).ToList();
+
+            List<Product> products = _productService.SearchProducts(searchQuery);
 
             /*****************
              * Sorting

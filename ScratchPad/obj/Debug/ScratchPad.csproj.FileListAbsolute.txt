@@ -200,3 +200,8 @@ C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.DataLayer.pd
 C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.DataLayer.dll.config
 C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.DomainModels.pdb
 C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.DomainModels.dll.config
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Company.ServiceContracts.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Company.ServiceLayer.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Company.ServiceContracts.pdb
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Company.ServiceLayer.pdb
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Company.ServiceLayer.dll.config
