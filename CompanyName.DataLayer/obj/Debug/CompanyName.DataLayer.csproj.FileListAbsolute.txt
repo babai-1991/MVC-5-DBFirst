@@ -1,0 +1,15 @@
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\bin\Debug\CompanyName.DataLayer.dll.config
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\bin\Debug\CompanyName.DataLayer.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\bin\Debug\CompanyName.DataLayer.pdb
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\bin\Debug\CompanyName.DomainModels.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\bin\Debug\CompanyName.DomainModels.pdb
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\bin\Debug\CompanyName.DomainModels.dll.config
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\bin\Debug\EntityFramework.xml
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\obj\Debug\CompanyName.DataLayer.csprojAssemblyReference.cache
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\obj\Debug\CompanyName.DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\obj\Debug\CompanyName.DataLayer.csproj.CopyComplete
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\obj\Debug\CompanyName.DataLayer.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\CompanyName.DataLayer\obj\Debug\CompanyName.DataLayer.pdb

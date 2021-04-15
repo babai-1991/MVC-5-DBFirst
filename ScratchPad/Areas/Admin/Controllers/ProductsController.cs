@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CompanyName.DataLayer;
+using CompanyName.DomainModels;
 using ScratchPad.Filters;
-using ScratchPad.Models;
+
 
 namespace ScratchPad.Areas.Admin.Controllers
 {
@@ -21,7 +23,7 @@ namespace ScratchPad.Areas.Admin.Controllers
         public ActionResult Index(string searchQuery = "", string columnName = "ProductID", string iconClass = "fa-sort-asc", int currentPageNo = 1)
         {
             ViewBag.SearchTerm = searchQuery;
-            var db = DatabaseOperation();
+            var db = new EFDBFirstDatabaseEntities();
             List<Product> products = db.Products.Where(p => p.ProductName.Contains(searchQuery)).ToList();
 
             /*****************

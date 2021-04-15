@@ -194,3 +194,9 @@ C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\obj\Debug\ScratchPad.csproj.
 C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\obj\Debug\ScratchPad.csproj.CopyComplete
 C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\obj\Debug\ScratchPad.dll
 C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\obj\Debug\ScratchPad.pdb
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.DataLayer.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.DomainModels.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.DataLayer.pdb
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.DataLayer.dll.config
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.DomainModels.pdb
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.DomainModels.dll.config

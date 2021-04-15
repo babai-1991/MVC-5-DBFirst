@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CompanyName.DataLayer;
 using ScratchPad.Filters;
 using ScratchPad.Models;
+using CompanyName.DomainModels;
+using Product = CompanyName.DomainModels.Product;
 
 namespace ScratchPad.Areas.Manager.Controllers
 {
