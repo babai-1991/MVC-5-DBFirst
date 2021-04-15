@@ -1,0 +1,12 @@
+C:\Users\Subharthi Das\Desktop\EFDBFirst\DomainModels\bin\Debug\DomainModels.dll.config
+C:\Users\Subharthi Das\Desktop\EFDBFirst\DomainModels\bin\Debug\DomainModels.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\DomainModels\bin\Debug\DomainModels.pdb
+C:\Users\Subharthi Das\Desktop\EFDBFirst\DomainModels\bin\Debug\EntityFramework.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\DomainModels\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\DomainModels\bin\Debug\EntityFramework.xml
+C:\Users\Subharthi Das\Desktop\EFDBFirst\DomainModels\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Subharthi Das\Desktop\EFDBFirst\DomainModels\obj\Debug\DomainModels.csprojAssemblyReference.cache
+C:\Users\Subharthi Das\Desktop\EFDBFirst\DomainModels\obj\Debug\DomainModels.csproj.CoreCompileInputs.cache
+C:\Users\Subharthi Das\Desktop\EFDBFirst\DomainModels\obj\Debug\DomainModels.csproj.CopyComplete
+C:\Users\Subharthi Das\Desktop\EFDBFirst\DomainModels\obj\Debug\DomainModels.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\DomainModels\obj\Debug\DomainModels.pdb
