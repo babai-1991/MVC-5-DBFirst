@@ -1,6 +1,8 @@
 using System;
 using Company.ServiceContracts;
 using Company.ServiceLayer;
+using CompanyName.RepositoryContract;
+using CompanyName.RepositoryLayer;
 using Unity;
 
 namespace ScratchPad
@@ -44,6 +46,7 @@ namespace ScratchPad
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
              container.RegisterType<IProductService, ProductService>();
+             container.RegisterType<IProductRepository, ProductRepository>();
 
         }
     }

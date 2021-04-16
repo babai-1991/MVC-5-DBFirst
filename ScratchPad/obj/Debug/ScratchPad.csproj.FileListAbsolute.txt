@@ -217,3 +217,8 @@ C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Unity.Abstractions.pdb
 C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Unity.Container.pdb
 C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Unity.Mvc.pdb
 C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Unity.Mvc.xml
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.RepositoryContract.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.RepositoryLayer.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.RepositoryContract.pdb
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.RepositoryLayer.pdb
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\CompanyName.RepositoryLayer.dll.config

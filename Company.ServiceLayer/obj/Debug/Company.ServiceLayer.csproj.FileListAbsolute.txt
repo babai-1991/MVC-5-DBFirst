@@ -18,3 +18,5 @@ C:\Users\Subharthi Das\Desktop\EFDBFirst\Company.ServiceLayer\bin\Debug\EntityFr
 C:\Users\Subharthi Das\Desktop\EFDBFirst\Company.ServiceLayer\obj\Debug\Company.ServiceLayer.csproj.CopyComplete
 C:\Users\Subharthi Das\Desktop\EFDBFirst\Company.ServiceLayer\obj\Debug\Company.ServiceLayer.dll
 C:\Users\Subharthi Das\Desktop\EFDBFirst\Company.ServiceLayer\obj\Debug\Company.ServiceLayer.pdb
+C:\Users\Subharthi Das\Desktop\EFDBFirst\Company.ServiceLayer\bin\Debug\CompanyName.RepositoryContract.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\Company.ServiceLayer\bin\Debug\CompanyName.RepositoryContract.pdb

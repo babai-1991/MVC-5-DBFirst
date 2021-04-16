@@ -64,6 +64,10 @@
       <Project>{69F7A347-5DD7-46D6-8057-7183F8BEB348}</Project>
       <Name>CompanyName.DomainModels</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CompanyName.RepositoryContract\CompanyName.RepositoryContract.csproj">
+      <Project>{18947777-37D1-4A66-B9E8-A193FEC94B3F}</Project>
+      <Name>CompanyName.RepositoryContract</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
