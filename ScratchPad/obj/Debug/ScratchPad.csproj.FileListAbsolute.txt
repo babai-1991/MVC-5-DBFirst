@@ -205,3 +205,15 @@ C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Company.ServiceLayer.dll
 C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Company.ServiceContracts.pdb
 C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Company.ServiceLayer.pdb
 C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Company.ServiceLayer.dll.config
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Unity.Abstractions.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Unity.Container.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Unity.Mvc.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\WebActivatorEx.dll
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Unity.Abstractions.pdb
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Unity.Container.pdb
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Unity.Mvc.pdb
+C:\Users\Subharthi Das\Desktop\EFDBFirst\ScratchPad\bin\Unity.Mvc.xml

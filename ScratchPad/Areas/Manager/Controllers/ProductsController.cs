@@ -17,10 +17,10 @@ namespace ScratchPad.Areas.Manager.Controllers
         // GET: Manager/Products
         private readonly EFDBFirstDatabaseEntities _dbContext;
         private readonly IProductService _productService;
-        public ProductsController()
+        public ProductsController(IProductService productService)
         {
             _dbContext = new EFDBFirstDatabaseEntities();
-            _productService = new ProductService();
+            _productService = productService;
         }
         // GET: Category
         public ActionResult Index(string searchQuery = "", string columnName = "ProductID", string iconClass = "fa-sort-asc", int currentPageNo = 1)

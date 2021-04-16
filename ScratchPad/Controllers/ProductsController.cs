@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Company.ServiceContracts;
-using Company.ServiceLayer;
+﻿using Company.ServiceContracts;
 using CompanyName.DataLayer;
 using CompanyName.DomainModels;
 using ScratchPad.Filters;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
 
 
 namespace ScratchPad.Controllers
@@ -17,10 +15,10 @@ namespace ScratchPad.Controllers
         // GET: Admin/Products
         private readonly EFDBFirstDatabaseEntities _dbContext;
         private readonly IProductService _productService;
-        public ProductsController()
+        public ProductsController(IProductService productService)
         {
             _dbContext = new EFDBFirstDatabaseEntities();
-            _productService = new ProductService();
+            _productService = productService;
         }
         // GET: 
         [MyAuthenticationFilter]
